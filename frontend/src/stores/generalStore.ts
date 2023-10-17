@@ -8,6 +8,7 @@ export interface GeneralState {
   ids: null
   products: null
 }
+
 export interface GeneralActions {
   setLoginIsOpen: (isLoginOpen: boolean) => void
   setIsEditProfileOpen: () => void

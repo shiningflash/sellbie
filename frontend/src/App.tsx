@@ -1,11 +1,17 @@
-import { useState } from 'react'
+import AuthOverlay from "./components/AuthModal"
+import "./index.css"
+import useGeneralStore from "./stores/generalStore"
 
 function App() {
-
+  const isLoginOpen = useGeneralStore((state) => state.isLoginOpen)
   return (
-    <div className='bg-red-500'>
-      LETS GOOOO
-    </div> 
+    <div className=" ">
+      {isLoginOpen && (
+        <>
+          <AuthOverlay />
+        </>
+      )}{" "}
+    </div>
   )
 }
 
