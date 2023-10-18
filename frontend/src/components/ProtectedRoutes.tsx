@@ -16,7 +16,7 @@ const ProtectedRoutes = ({ children }: { children: ReactNode }) => {
   }, [user.id, navigate, setLoginIsOpen])
 
   if (!user.id) {
-    return <> No Access </>
+    return <>  </>
   }
 
   return <> {children} </>
