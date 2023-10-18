@@ -26,22 +26,12 @@ export class UserResolver {
         confirmPassword: 'Password and confirm password are not the same.',
       });
     }
-    try {
-      const { user } = await this.authService.register(
+    const { user } = await this.authService.register(
         registerDto,
         context.res,
       );
-      console.log('user!', user);
-      return { user };
-    } catch (error) {
-      // Handle the error
-      return {
-        error: {
-          message: error.message,
-          // code: 'SOME_ERROR_CODE'
-        },
-      };
-    }
+    console.log('user!', user);
+    return { user };
   }
 
   @Mutation(() => LoginResponse) // Adjust this return type as needed

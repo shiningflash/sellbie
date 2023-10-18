@@ -7,6 +7,10 @@ import { join } from 'path';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { ProductModule } from './product/product.module';
+import { TransactionResolver } from './transaction/transaction.resolver';
+import { TransactionService } from './transaction/transaction.service';
+import { TransactionModule } from './transaction/transaction.module';
 
 @Module({
   imports: [
@@ -19,9 +23,11 @@ import { UserModule } from './user/user.module';
     }),
     ConfigModule.forRoot({}),
     AuthModule,
-    UserModule
+    UserModule,
+    ProductModule,
+    TransactionModule
   ],
   controllers: [AppController],  
-  providers: [AppService],
+  providers: [AppService, TransactionResolver, TransactionService],
 })
 export class AppModule {}
