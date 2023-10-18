@@ -4,8 +4,8 @@ import {
     UnauthorizedException,
   } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { PrismaService } from '../prisma.service'; // Your Prisma service
-import * as bcrypt from 'bcrypt';
+import { PrismaService } from '../prisma.service';
+import * as bcrypt from 'bcryptjs';
 import { Response, Request } from 'express';
 import { User } from '@prisma/client';
 import { ConfigService } from '@nestjs/config';
@@ -18,6 +18,7 @@ export class AuthService {
     private readonly prisma: PrismaService,
     private readonly configService: ConfigService,
   ) {}
+
   async refreshToken(req: Request, res: Response): Promise<string> {
     const refreshToken = req.cookies['refresh_token'];
 
@@ -91,13 +92,12 @@ export class AuthService {
   }
 
   async register(registerDto: RegisterDto, response: Response) {
-    console.log('registerDto!!!', registerDto);
     const existingUser = await this.prisma.user.findUnique({
       where: { email: registerDto.email },
     });
 
     if (existingUser) {
-      throw new Error('Email already in use'); // Provide a proper error response
+      throw new Error('Email already in use');
     }
 
     const hashedPassword = await bcrypt.hash(registerDto.password, 10);
@@ -109,15 +109,18 @@ export class AuthService {
         email: registerDto.email,
       },
     });
-    console.log('user!!!', user);
-    return this.issueTokens(user, response); // Issue tokens on registration
+
+    console.log('New user', user);
+
+     // Issue tokens on registration
+    return this.issueTokens(user, response);
   }
 
   async login(loginDto: LoginDto, response: Response) {
     const user = await this.validateUser(loginDto);
 
     if (!user) {
-      throw new Error('Invalid credentials');
+      throw new UnauthorizedException('Invalid credentials');
     }
 
     return this.issueTokens(user, response); // Issue tokens on login
@@ -126,6 +129,6 @@ export class AuthService {
   async logout(response: Response) {
     response.clearCookie('access_token');
     response.clearCookie('refresh_token');
-    return 'Successfully logged out';
+    return 'Logged out';
   }
 }

@@ -1,7 +1,8 @@
 import React from "react";
+import MainLayout from "../layouts/MainLayout";
 
 function Product() {
-    return <div>Product</div>
+    return <MainLayout>Products</MainLayout>
 }
 
 export default Product;
