@@ -1,38 +1,43 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Sellbie Backend Project
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Sellbie is a GraphQL-powered Nest.js backend designed to work seamlessly with a React.js frontend. This project serves as the backend foundation for a product renting and buying/selling application, offering features such as user authentication and product management.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Prerequisites
+Before you begin, ensure that you have the following dependencies installed:
 
-## Description
+- **Node.js**: Make sure you have Node.js installed on your machine.
+- **Docker**: You'll need Docker to run the database.
+- **Prisma**: Prisma is used for database operations.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Installation and Setup
 
-## Installation
+### Install Packages
+To set up the project, install the necessary Node.js packages by running the following command in your terminal:
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+### Run the Database
+
+You'll need a database for the project, which can be easily set up using Docker Compose. Run the following command to start the database:
+
+```bash
+$ docker compose up -d
+```
+
+### Start Prisma Studio
+
+Start Prisma Studio to interact with your database:
+
+```bash
+$ npx prisma studio
+```
+
+### Running the backend
+
+To run the Sellbie backend, execute the following command:
+
 
 ```bash
 # development
@@ -43,31 +48,43 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
-```
 
-## Test
-
-```bash
 # unit tests
 $ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
-## Support
+## Project Structure
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- **Part 1: Preliminary Features**
+  - User Authentication
+    - User Registration
+    - User Login
+  - Technologies: Nest.js, Prisma, GraphQL
 
-## Stay in touch
+- **Part 2: Implementation Documentation**
+  - Setting Up Prisma
+    - Data Models for Products, Categories, and Users
+    - Database Migrations
+  - Product CRUD Operations [Ongoing]
+    - Add, Edit, and Delete Products
+    - List Products with Filters and Pagination
+  - Frontend Integration [Ongoing]
+    - Infinite Scrolling
+    - Product Filtering
+  - Technologies: Nest.js, Prisma, GraphQL, React.js, Apollo Client
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- **Database**
+  - Docker-based Database Setup
 
-## License
+- **Prerequisites**
+  - Node.js
+  - Docker
+  - Prisma
 
-Nest is [MIT licensed](LICENSE).
+- **Installation and Setup**
+  - Installing Node.js Packages
+  - Running the Database
+  - Prisma Setup
+  - Running the Project
+
+This README provides a basic guide for setting up and running the Sellbie backend. Make sure to follow the specific documentation for each part to implement the desired features.

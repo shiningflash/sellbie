@@ -39,6 +39,10 @@ const router = createBrowserRouter([
     path: "/product/:id",
     element: <Product />,
   },
+  {
+    path: "/product/upload",
+    element: <Product />,
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

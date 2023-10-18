@@ -38,6 +38,17 @@ export type LoginResponse = {
   user: User;
 };
 
+export type ProductType = {
+  __typename?: 'ProductType';
+  createdAt: Scalars['DateTime']['output'];
+  id: Scalars['Int']['output'];
+  userId: Scalars['Int']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  price: Scalars['Int']['output'];
+  user: User;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   login: LoginResponse;
@@ -59,6 +70,7 @@ export type MutationRegisterArgs = {
 export type Query = {
   __typename?: 'Query';
   hello: Scalars['String']['output'];
+  getProducts: Array<ProductType>;
 };
 
 export type RegisterDto = {

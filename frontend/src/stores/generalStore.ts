@@ -4,7 +4,7 @@ import { persist, devtools } from "zustand/middleware"
 export interface GeneralState {
   isLoginOpen: boolean
   isEditProfileOpen: boolean
-  selectedPosts: null
+  selectedProducts: null
   ids: null
   products: null
 }
@@ -20,7 +20,7 @@ const useGeneralStore = create<GeneralState & GeneralActions>()(
       (set) => ({
         isLoginOpen: false,
         isEditProfileOpen: false,
-        selectedPosts: null,
+        selectedProducts: null,
         ids: null,
         products: null,
         setLoginIsOpen: (isLoginOpen: boolean) => {

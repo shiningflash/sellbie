@@ -29,7 +29,18 @@ type Mutation {
   register(registerInput: RegisterDto!): RegisterResponse!
 }
 
+type ProductType {
+  createdAt: DateTime!
+  description: String!
+  id: Int!
+  price: Float!
+  title: String!
+  userId: Float!
+  views: Float!
+}
+
 type Query {
+  getProducts(skip: Int! = 0, take: Int! = 1): [ProductType!]!
   hello: String!
 }
 
