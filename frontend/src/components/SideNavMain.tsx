@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom"
 import TextInput from "./TextInput"
 
 function SideNavMain() {
-
   const doNothing = ""
 
   return (
