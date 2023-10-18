@@ -11,7 +11,7 @@ function SideNavMain() {
       id="SideNavMain"
       className={[
         useLocation().pathname === "/" ? "lg:w-[310px]" : "lg:w-[220px]",
-        "fixed z-20 bg-white pt-[70px] h-full lg:border-r-0 border-r  overflow-auto",
+        "fixed z-20 bg-white pt-[1px] h-full lg:border-r-0 border-r  overflow-auto",
       ].join(" ")}
     >
       <div className="lg:w-full w-[55px] mx-auto">

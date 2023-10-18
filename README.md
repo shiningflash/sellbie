@@ -46,11 +46,16 @@ Each component of Sellbie has its own README with specific setup and usage instr
 
 - To run the Sellbie Frontend, follow the instructions in the [Sellbie Frontend README](./frontend/README.md).
 
+## Project Previews
+
+* Signup Preview
+
+![using a color picker](./preview/Signup.gif 'Signup')
+
+* Login Preview
+
+![Login](./preview/Login.gif 'Login')
+
 ## Disclaimer
 
 Please note that this project is ongoing, and while many main features are already implemented, there are some exciting developments still in progress.
-
-## Project Previews
-
-[Inserting some images or GIFs showcasing the frontend and backend of the Sellbie project here.]
-

@@ -53,6 +53,9 @@ $ npm run start:prod
 $ npm run test
 ```
 
+Access the Sellbie Backend at http://localhost:3000/
+Access the Sellbie Backend Graphql at http://localhost:3000/graphql
+
 ## Project Structure
 
 - **Part 1: Preliminary Features**
